@@ -11,14 +11,15 @@ html
     .carousel
       .carousel--bottom
 
-      #polynode
-          #scene(style='margin-left: -600px; margin-top: -400px; width: 1200px; height: 800px; left: 50%; top: 50%; -webkit-transform: perspective(1000px) translate3d(0px, 0px, 0px);')
+      #polynode.carousel--3d
+          #scene.carousel--scene
               #stage(style='-webkit-transform: translate3d(0px, 0px, 0px);')
                 #cone2.model
                   - var width = 50, height = 370.5, amount = 36;
+                  - var em = 1/16;
                   - for (var i=1; i<=amount;i++)  
                     .dome(class="s#{i}")
-                      svg(style='width: #{width}px; height: #{height}px;')
+                      svg(style='width: #{width*em}em; height: #{height*em}em;')
                         polygon(points='#{width/2},0 #{width},#{height} 0,#{height}')
 
               .scene
@@ -112,7 +113,6 @@ html
 
 
 
-    script(src='http://poly-node.com/poly-node-controller.min.js')
-    script(src='js/index.js')
+    //- script(src='http://poly-node.com/poly-node-controller.min.js')
     script(src="js/prefixfree.min.js")
 

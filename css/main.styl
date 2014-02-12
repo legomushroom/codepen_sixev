@@ -1,6 +1,8 @@
 hl(size=2px, color=red)
 	outline size solid color
 
+PX = (1/16)em
+
 transform()
 	-webkit-transform arguments
 	-moz-transform arguments
@@ -27,13 +29,13 @@ transform-style()
   -ms-transform-style arguments
   transform-style arguments
 
-width = 560px
+width = 560*PX
 .a
 	hl 10px
 	position absolute
 	width width
-	margin-left -320px
-	transform translateZ(-240px)
+	margin-left -320*PX
+	transform translateZ(-240*PX)
 
 .dome
 	position absolute
@@ -43,26 +45,51 @@ width = 560px
 	&:nth-of-type(odd)
 		fill #ff6d6a
 
+// .carousel--3d
+// 	transform  translate3d(0,0,10000px)
+// 	transform-style preserve-3d
+
+// 	transform-origin right bottom 0
+
+.carousel--scene
+	transform perspective(20000*PX) rotateX(90deg) rotateZ(50deg) translateZ(250*PX)
+	transform-origin 50% 50%
+	margin-left -50%
+	margin-top  -50%
+	left 50%
+	top 50%
+	// hl 10px
+
 
 for i in 1..37
 	.s{i}
 		// opacity .25
-		transform translate3d(-60px, 0, 0) rotateZ(i*10deg) rotateX(-39.5deg) scaleZ(1);
+		transform translate3d(-60*PX, 0, 0) rotateZ(i*10deg) rotateX(-39.5deg) scaleZ(1);
 		transform-origin: 50% top 0; 
-		width: 50px; height: 370.5px;
+		width: 50*PX; height: 370.5*PX;
 
 
-PX = (1/16)em
-.cylinder-1{
-  // background-color red !important
-  // width 35em + 13*PX !important
-}
+.carousel
+	// hl 10px green
+	position relative
+	width  500*PX
+	height 500*PX
+	transform scale(.55)
+
+	.carousel--bottom
+		position absolute
+		width 35.8125em
+		z-index 1
+		height   3em
+		bottom 	-4.75em
+		margin-left -2.25em
+		background-color pink
 
 .cylinder-1 .face{
   background-color #ff6d6a 
   // background-color transparent !important
-  border-bottom-left-radius  40px
-  border-bottom-right-radius 40px
+  border-bottom-left-radius  40*PX
+  border-bottom-right-radius 40*PX
 }
 
 .cylinder-1 .face:nth-of-type(odd){
@@ -74,7 +101,7 @@ PX = (1/16)em
 }
 
 /* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ #tridiv {
-  perspective: 800px;
+  perspective: 800*PX;
   position: absolute;
   overflow: hidden;
   width: 100%;
@@ -90,7 +117,7 @@ PX = (1/16)em
   width: 80em;
   height: 80em;
   top: 50%;
-  left: 50%;
+  left: 57%;
   margin: -40em 0 0 -40em;
 	transform rotateX(-90deg) rotateY(5deg) translate3d(-33px,234px,-22px)
 	transform-origin 50% 50%
@@ -109,10 +136,7 @@ PX = (1/16)em
   backface-visibility: hidden;
   /* hidden by default, prevent blinking and other weird rendering glitchs */
 }
-.face {
-  background-size: 100% 100%!important;
-  background-position: center;
-}
+
 .face-wrapper .face {
   left: 100%;
   width: 100%;
@@ -275,7 +299,7 @@ PX = (1/16)em
   transform:translate3D(-11.091666666666663em, 10.249999999999998em, -9.958333333333334em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:.25em;
-  height:15em;
+  height:17em;
   margin:-7.5em 0 0 -0.125em;
 }
 .cyl-2 .tp, .cyl-2 .bm {
@@ -284,7 +308,7 @@ PX = (1/16)em
 }
 .cyl-2 .side {
   width:0.4580127018922192em;
-  height:15em;
+  height:17em;
 }
 .cyl-2 .s0 {
   transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
@@ -303,7 +327,7 @@ PX = (1/16)em
   transform:translate3D(0em, 10.24em, -14em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:.25em;
-  height:15em;
+  height:17em;
   margin:-7.5em 0 0 -0.125em;
 }
 .cyl-3 .tp, .cyl-3 .bm {
@@ -312,7 +336,7 @@ PX = (1/16)em
 }
 .cyl-3 .side {
   width:0.4580127018922192em;
-  height:15em;
+  height:17em;
 }
 .cyl-3 .s0 {
   transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
@@ -331,7 +355,7 @@ PX = (1/16)em
   transform:translate3D(10.658333333333337em, 10.249999999999998em, -10.250000000000002em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:.25em;
-  height:15em;
+  height:17em;
   margin:-7.5em 0 0 -0.125em;
 }
 .cyl-4 .tp, .cyl-4 .bm {
@@ -340,7 +364,7 @@ PX = (1/16)em
 }
 .cyl-4 .side {
   width:0.4580127018922192em;
-  height:15em;
+  height:17em;
 }
 .cyl-4 .s0 {
   transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
@@ -359,7 +383,7 @@ PX = (1/16)em
   transform:translate3D(15.666666666666666em, 10.24em, 0.08333333333333333em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:.25em;
-  height:15em;
+  height:17em;
   margin:-7.5em 0 0 -0.125em;
 }
 .cyl-5 .tp, .cyl-5 .bm {
@@ -368,7 +392,7 @@ PX = (1/16)em
 }
 .cyl-5 .side {
   width:0.4580127018922192em;
-  height:15em;
+  height:17em;
 }
 .cyl-5 .s0 {
   transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
@@ -387,7 +411,7 @@ PX = (1/16)em
   transform:translate3D(11.450000000000003em, 10.24em, 10.895833333333334em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:.25em;
-  height:15em;
+  height:17em;
   margin:-7.5em 0 0 -0.125em;
 }
 .cyl-6 .tp, .cyl-6 .bm {
@@ -396,7 +420,7 @@ PX = (1/16)em
 }
 .cyl-6 .side {
   width:0.4580127018922192em;
-  height:15em;
+  height:17em;
 }
 .cyl-6 .s0 {
   transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
@@ -415,7 +439,7 @@ PX = (1/16)em
   transform:translate3D(-11.070833333333331em, 10.249999999999998em, 11.979166666666666em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:.25em;
-  height:15em;
+  height:17em;
   margin:-7.5em 0 0 -0.125em;
 }
 .cyl-7 .tp, .cyl-7 .bm {
@@ -424,7 +448,7 @@ PX = (1/16)em
 }
 .cyl-7 .side {
   width:0.4580127018922192em;
-  height:15em;
+  height:17em;
 }
 .cyl-7 .s0 {
   transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
@@ -443,7 +467,7 @@ PX = (1/16)em
   transform:translate3D(-16em, 10.916666666666666em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:.25em;
-  height:15em;
+  height:17em;
   margin:-7.5em 0 0 -0.125em;
 }
 .cyl-8 .tp, .cyl-8 .bm {
@@ -452,7 +476,7 @@ PX = (1/16)em
 }
 .cyl-8 .side {
   width:0.4580127018922192em;
-  height:15em;
+  height:17em;
 }
 .cyl-8 .s0 {
   transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
@@ -471,7 +495,7 @@ PX = (1/16)em
   transform:translate3D(0em, 10.24em, 16.583333333333332em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   opacity:1;
   width:.25em;
-  height:15em;
+  height:17em;
   margin:-7.5em 0 0 -0.125em;
 }
 .cyl-9 .tp, .cyl-9 .bm {
@@ -480,7 +504,7 @@ PX = (1/16)em
 }
 .cyl-9 .side {
   width:0.4580127018922192em;
-  height:15em;
+  height:17em;
 }
 .cyl-9 .s0 {
   transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);

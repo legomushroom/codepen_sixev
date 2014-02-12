@@ -34,15 +34,8 @@ body {
 }
 
 #stage {
-	left:50%;
+	left:57%;
 	top:50%;
 	opacity:1;
 }
 
-#polynode{
-    -webkit-transform: translate3d(0px, 0px, 10000px);
-       -moz-transform: translate3d(0px, 0px, 10000px);
-            -o-transform: translate3d(0px, 0px, 10000px);
-         -ms-transform: translate3d(0px, 0px, 10000px);
-                  transform: translate3d(0px, 0px, 10000px);
-}
