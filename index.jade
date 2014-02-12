@@ -7,104 +7,108 @@ html
     link(rel='stylesheet', href='css/style.css', media='screen', type='text/css')
     link(rel='stylesheet', href='css/main.css', media='screen', type='text/css')
   body
-    #polynode
-      #scene(style='margin-left: -600px; margin-top: -400px; width: 1200px; height: 800px; left: 50%; top: 50%; -webkit-transform: perspective(1000px) translate3d(0px, 0px, 0px);')
-        #stage(style='-webkit-transform: translate3d(0px, 0px, 0px);')
-          #cone2.model
-            - var width = 50, height = 370.5, amount = 36;
-            - for (var i=1; i<=amount;i++)  
-              .dome(class="s#{i}")
-                svg(style='width: #{width}px; height: #{height}px;')
-                  polygon(points='#{width/2},0 #{width},#{height} 0,#{height}')
 
-        .scene
-            .shape.cylinder-1.cyl-1
-              .face.bm
-              //- .face.tp
-              .face.side.s0
-              .face.side.s1
-              .face.side.s2
-              .face.side.s3
-              .face.side.s4
-              .face.side.s5
-              .face.side.s6
-              .face.side.s7
-              .face.side.s8
-              .face.side.s9
-              .face.side.s10
-              .face.side.s11
-              .face.side.s12
-              .face.side.s13
-              .face.side.s14
-              .face.side.s15
-              .face.side.s16
-              .face.side.s17
-              .face.side.s18
-              .face.side.s19
-              .face.side.s20
-              .face.side.s21
-              .face.side.s22
-              .face.side.s23
-              .face.side.s24
-              .face.side.s25
-              .face.side.s26
-              .face.side.s27
-              .face.side.s28
-              .face.side.s29
-              .face.side.s30
-              .face.side.s31
-              .face.side.s32
-              .face.side.s33
-              .face.side.s34
-              .face.side.s35
-            .shape.cylinder-2.cyl-2
-              .face.bm
-              .face.tp
-              .face.side.s0
-              .face.side.s1
-              .face.side.s2
-            .shape.cylinder-3.cyl-3
-              .face.bm
-              .face.tp
-              .face.side.s0
-              .face.side.s1
-              .face.side.s2
-            .shape.cylinder-4.cyl-4
-              .face.bm
-              .face.tp
-              .face.side.s0
-              .face.side.s1
-              .face.side.s2
-            .shape.cylinder-5.cyl-5
-              .face.bm
-              .face.tp
-              .face.side.s0
-              .face.side.s1
-              .face.side.s2
-            .shape.cylinder-6.cyl-6
-              .face.bm
-              .face.tp
-              .face.side.s0
-              .face.side.s1
-              .face.side.s2
-            .shape.cylinder-7.cyl-7
-              .face.bm
-              .face.tp
-              .face.side.s0
-              .face.side.s1
-              .face.side.s2
-            .shape.cylinder-8.cyl-8
-              .face.bm
-              .face.tp
-              .face.side.s0
-              .face.side.s1
-              .face.side.s2
-            .shape.cylinder-9.cyl-9
-              .face.bm
-              .face.tp
-              .face.side.s0
-              .face.side.s1
-              .face.side.s2
+    .carousel
+      .carousel--bottom
+
+      #polynode
+          #scene(style='margin-left: -600px; margin-top: -400px; width: 1200px; height: 800px; left: 50%; top: 50%; -webkit-transform: perspective(1000px) translate3d(0px, 0px, 0px);')
+              #stage(style='-webkit-transform: translate3d(0px, 0px, 0px);')
+                #cone2.model
+                  - var width = 50, height = 370.5, amount = 36;
+                  - for (var i=1; i<=amount;i++)  
+                    .dome(class="s#{i}")
+                      svg(style='width: #{width}px; height: #{height}px;')
+                        polygon(points='#{width/2},0 #{width},#{height} 0,#{height}')
+
+              .scene
+                  .shape.cylinder-1.cyl-1
+                    .face.bm
+                    //- .face.tp
+                    .face.side.s0
+                    .face.side.s1
+                    .face.side.s2
+                    .face.side.s3
+                    .face.side.s4
+                    .face.side.s5
+                    .face.side.s6
+                    .face.side.s7
+                    .face.side.s8
+                    .face.side.s9
+                    .face.side.s10
+                    .face.side.s11
+                    .face.side.s12
+                    .face.side.s13
+                    .face.side.s14
+                    .face.side.s15
+                    .face.side.s16
+                    .face.side.s17
+                    .face.side.s18
+                    .face.side.s19
+                    .face.side.s20
+                    .face.side.s21
+                    .face.side.s22
+                    .face.side.s23
+                    .face.side.s24
+                    .face.side.s25
+                    .face.side.s26
+                    .face.side.s27
+                    .face.side.s28
+                    .face.side.s29
+                    .face.side.s30
+                    .face.side.s31
+                    .face.side.s32
+                    .face.side.s33
+                    .face.side.s34
+                    .face.side.s35
+                  .shape.cylinder-2.cyl-2
+                    .face.bm
+                    .face.tp
+                    .face.side.s0
+                    .face.side.s1
+                    .face.side.s2
+                  .shape.cylinder-3.cyl-3
+                    .face.bm
+                    .face.tp
+                    .face.side.s0
+                    .face.side.s1
+                    .face.side.s2
+                  .shape.cylinder-4.cyl-4
+                    .face.bm
+                    .face.tp
+                    .face.side.s0
+                    .face.side.s1
+                    .face.side.s2
+                  .shape.cylinder-5.cyl-5
+                    .face.bm
+                    .face.tp
+                    .face.side.s0
+                    .face.side.s1
+                    .face.side.s2
+                  .shape.cylinder-6.cyl-6
+                    .face.bm
+                    .face.tp
+                    .face.side.s0
+                    .face.side.s1
+                    .face.side.s2
+                  .shape.cylinder-7.cyl-7
+                    .face.bm
+                    .face.tp
+                    .face.side.s0
+                    .face.side.s1
+                    .face.side.s2
+                  .shape.cylinder-8.cyl-8
+                    .face.bm
+                    .face.tp
+                    .face.side.s0
+                    .face.side.s1
+                    .face.side.s2
+                  .shape.cylinder-9.cyl-9
+                    .face.bm
+                    .face.tp
+                    .face.side.s0
+                    .face.side.s1
+                    .face.side.s2
 
 
 
