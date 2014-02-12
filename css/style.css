@@ -1,14 +1,9 @@
 body {
-    background-color:#f1f1f1;
+    background-color:#64c2c1;
     padding:0;
     margin:0;
     overflow:hidden;
     font-size:16px;
-}
-
-.model {
-    position:absolute;
-    z-index:100000;
 }
 
 .model svg {
