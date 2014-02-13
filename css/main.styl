@@ -35,6 +35,12 @@ animation()
   -ms-animation arguments
   animation arguments
 
+
+rect()
+	width  arguments
+	height arguments
+
+
 .dome
 	position absolute
 	display inline-block
@@ -76,6 +82,52 @@ for i in 1..36
 	height 500*PX
 	transform scale(.55)
 
+
+width = 2.5em
+.carousel-top
+	width  width
+	height 5em
+	position absolute
+	top -5em
+	left 50%
+	margin-left -(width/2)
+	
+	.carousel-top--circle-large, .carousel-top--circle-small
+		width width
+		height width
+		background-color #f6c855
+		position absolute
+		bottom 0
+		border-radius 50%
+		box-shadow inset 0 -6*PX 0 rgba(0,0,0,.15)
+
+	.carousel-top--circle-small
+		width  (width/1.75)
+		height (width/1.75)
+		bottom width + 6*PX
+		box-shadow inset 0 -4*PX 0 rgba(0,0,0,.15)
+		left 50%
+		margin-left -((width/1.75)/2)
+
+		&:after
+			content ''
+			position absolute
+			width 6*PX
+			height 2em
+			background #d4b05c
+			left 8*PX
+			z-index -1
+
+		&:before
+			content ''
+			position absolute
+			border 4*PX solid rgba(#f6c855,0)
+			border-bottom 2em solid #f6c855
+			top - 36*PX
+			left 8*PX
+			z-index -1
+
+
 .carousel-bottom
 	position absolute
 	width 36em - 10*PX
@@ -84,6 +136,7 @@ for i in 1..36
 	bottom 	-4.75em
 	margin-left - 2em
 	background-color #dd5754
+	transform translateZ(400*PX)
 
 	.carousel-bottom--top, .carousel-bottom--bottom
 		width 36em - 1*PX
