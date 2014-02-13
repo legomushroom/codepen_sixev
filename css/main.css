@@ -706,17 +706,8 @@ rect() {
 .cylinder-1 .face:nth-of-type(odd) {
   background-color: #e1d7be;
 }
-.cylinder-1 .face.bm {
+.cylinder-1 .face.face.bm {
   background-color: #ff6d6a !important;
-}
-/* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */
-#tridiv {
-  perspective: 50em;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  font-size: 75%;
 }
 .scene,
 .shape,
@@ -786,13 +777,6 @@ rect() {
 .cr .side {
   height: 100%;
 }
-[class*="cylinder"] .tp {
-  -webkit-transform: rotateX(90deg) translateY(-50%);
-  -moz-transform: rotateX(90deg) translateY(-50%);
-  -ms-transform: rotateX(90deg) translateY(-50%);
-  -o-transform: rotateX(90deg) translateY(-50%);
-  transform: rotateX(90deg) translateY(-50%);
-}
 [class*="cylinder"] .bm {
   -webkit-transform: rotateX(-90deg) translateY(-50%);
   -moz-transform: rotateX(-90deg) translateY(-50%);
@@ -800,9 +784,7 @@ rect() {
   -o-transform: rotateX(-90deg) translateY(-50%);
   transform: rotateX(-90deg) translateY(-50%);
 }
-[class*="cylinder"] .tp,
 [class*="cylinder"] .bm,
-[class*="cylinder"] .tp .photon-shader,
 [class*="cylinder"] .bm .photon-shader {
   border-radius: 50%;
 }
@@ -821,21 +803,13 @@ rect() {
   height: 4em;
   margin: -2em 0 0 -17.90625em;
 }
-.cyl-1 .tp,
-.cyl-1 .bm {
-  width: 35.8125em;
-  height: 35.8125em;
-}
 .cyl-1 .side {
   width: 3.1581877625221533em;
   height: 4em;
 }
-.cyl-1 .s0 {
-  -webkit-transform: rotateY(5deg) translate3D(-50%, 0, 17.88125em);
-  -moz-transform: rotateY(5deg) translate3D(-50%, 0, 17.88125em);
-  -ms-transform: rotateY(5deg) translate3D(-50%, 0, 17.88125em);
-  -o-transform: rotateY(5deg) translate3D(-50%, 0, 17.88125em);
-  transform: rotateY(5deg) translate3D(-50%, 0, 17.88125em);
+.cyl-1 .bm {
+  width: 35.8125em;
+  height: 35.8125em;
 }
 .cyl-1 .s1 {
   -webkit-transform: rotateY(15deg) translate3D(-50%, 0, 17.88125em);
@@ -1082,6 +1056,20 @@ rect() {
   -o-transform: rotateY(355deg) translate3D(-50%, 0, 17.88125em);
   transform: rotateY(355deg) translate3D(-50%, 0, 17.88125em);
 }
+.cyl-1 .s36 {
+  -webkit-transform: rotateY(365deg) translate3D(-50%, 0, 17.88125em);
+  -moz-transform: rotateY(365deg) translate3D(-50%, 0, 17.88125em);
+  -ms-transform: rotateY(365deg) translate3D(-50%, 0, 17.88125em);
+  -o-transform: rotateY(365deg) translate3D(-50%, 0, 17.88125em);
+  transform: rotateY(365deg) translate3D(-50%, 0, 17.88125em);
+}
+.cyl-1 .s37 {
+  -webkit-transform: rotateY(375deg) translate3D(-50%, 0, 17.88125em);
+  -moz-transform: rotateY(375deg) translate3D(-50%, 0, 17.88125em);
+  -ms-transform: rotateY(375deg) translate3D(-50%, 0, 17.88125em);
+  -o-transform: rotateY(375deg) translate3D(-50%, 0, 17.88125em);
+  transform: rotateY(375deg) translate3D(-50%, 0, 17.88125em);
+}
 /* .cyl-2 styles */
 .cyl-2 {
   -webkit-transform: translate3D(-11.091666666666663em, 10.249999999999998em, -9.958333333333334em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
@@ -1094,21 +1082,13 @@ rect() {
   height: 17em;
   margin: -7.5em 0 0 -0.125em;
 }
-.cyl-2 .tp,
-.cyl-2 .bm {
-  width: 0.25em;
-  height: 0.25em;
-}
 .cyl-2 .side {
   width: 0.4580127018922192em;
   height: 17em;
 }
-.cyl-2 .s0 {
-  -webkit-transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-  -moz-transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-  -ms-transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-  -o-transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-  transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
+.cyl-2 .face,
+.cyl-2 .side {
+  background-color: #faf4e5;
 }
 .cyl-2 .s1 {
   -webkit-transform: rotateY(180deg) translate3D(-50%, 0, 0.1em);
@@ -1123,10 +1103,6 @@ rect() {
   -ms-transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
   -o-transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
   transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-2 .face,
-.cyl-2 .side {
-  background-color: #faf4e5;
 }
 /* .cyl-3 styles */
 .cyl-3 {
