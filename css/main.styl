@@ -332,33 +332,23 @@ width = 2.5em
 			transform rotateY((start+(i*120))deg) translate3D(-50%, 0, 0.1em)
 
 /* .cyl-3 styles */
-.cyl-3 {
-  transform:translate3D(0em, 10.24em, -14em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  opacity:1;
-  width:.25em;
-  height:17em;
-  margin:-7.5em 0 0 -0.125em;
-}
-.cyl-3 .tp, .cyl-3 .bm {
-  width:.25em;
-  height:.25em;
-}
-.cyl-3 .side {
-  width:0.4580127018922192em;
-  height:17em;
-}
-.cyl-3 .s0 {
-  transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-3 .s1 {
-  transform: rotateY(180deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-3 .s2 {
-  transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-3 .face, .cyl-3 .side {
-  background-color:#faf4e5;
-}
+.cyl-3
+	transform translate3D(0em, 10.24em, -14em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	opacity:1;
+	width:.25em;
+	height:17em;
+	margin:-7.5em 0 0 -0.125em
+	.side
+		width:0.4580127018922192em
+		height:17em
+	.face, .side
+		background-color:#faf4e5
+
+	start = 60
+	for i in 1..2
+		.s{i}
+			transform rotateY((start+(i*120))deg) translate3D(-50%, 0, 0.1em)
+
 /* .cyl-4 styles */
 .cyl-4 {
   transform:translate3D(10.658333333333337em, 10.249999999999998em, -10.250000000000002em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
@@ -367,10 +357,7 @@ width = 2.5em
   height:17em;
   margin:-7.5em 0 0 -0.125em;
 }
-.cyl-4 .tp, .cyl-4 .bm {
-  width:.25em;
-  height:.25em;
-}
+
 .cyl-4 .side {
   width:0.4580127018922192em;
   height:17em;

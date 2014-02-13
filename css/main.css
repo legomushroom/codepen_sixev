@@ -1116,21 +1116,13 @@ rect() {
   height: 17em;
   margin: -7.5em 0 0 -0.125em;
 }
-.cyl-3 .tp,
-.cyl-3 .bm {
-  width: 0.25em;
-  height: 0.25em;
-}
 .cyl-3 .side {
   width: 0.4580127018922192em;
   height: 17em;
 }
-.cyl-3 .s0 {
-  -webkit-transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-  -moz-transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-  -ms-transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-  -o-transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-  transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
+.cyl-3 .face,
+.cyl-3 .side {
+  background-color: #faf4e5;
 }
 .cyl-3 .s1 {
   -webkit-transform: rotateY(180deg) translate3D(-50%, 0, 0.1em);
@@ -1146,10 +1138,6 @@ rect() {
   -o-transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
   transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
 }
-.cyl-3 .face,
-.cyl-3 .side {
-  background-color: #faf4e5;
-}
 /* .cyl-4 styles */
 .cyl-4 {
   -webkit-transform: translate3D(10.658333333333337em, 10.249999999999998em, -10.250000000000002em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
@@ -1161,11 +1149,6 @@ rect() {
   width: 0.25em;
   height: 17em;
   margin: -7.5em 0 0 -0.125em;
-}
-.cyl-4 .tp,
-.cyl-4 .bm {
-  width: 0.25em;
-  height: 0.25em;
 }
 .cyl-4 .side {
   width: 0.4580127018922192em;
