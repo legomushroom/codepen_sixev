@@ -82,6 +82,55 @@ for i in 1..36
 	height 500*PX
 	transform scale(.55)
 
+width = 8.3em
+height = 5em
+.banner
+	width width
+	height height
+	top -(height/2)
+	left -(width/2) + (3.1581877625221533/2)em
+	background-color #f6c855
+	position absolute
+	border-radius 50%
+.banner--text
+	font-size 50*PX
+	color white
+	text-align center
+	line-height 25*PX
+	position relative
+	z-index 1
+	display none
+
+size = 28*PX
+.banner--circle
+	position absolute
+	top 50%
+	left -(size/2)
+	margin-top -(size/2)
+	width  size
+	height size
+	background-color inherit
+	border-radius    inherit
+
+	size = 4*PX
+	&:after
+		content ''
+		position absolute
+		top 50%
+		left 50%
+		margin-left - (size/2)
+		margin-top  - (size/2)
+		width  size
+		height size
+		background-color white
+
+.banner--circle-right
+	right -(size/2)
+	left auto
+	
+// .banner--circle-left 
+
+
 
 width = 2.5em
 .carousel-top
@@ -186,7 +235,6 @@ width = 2.5em
 /* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ #tridiv {
   perspective: 800*PX;
   position: absolute;
-  overflow: hidden;
   width: 100%;
   height: 100%;
   background: transparent;
@@ -214,7 +262,6 @@ width = 2.5em
   transform-origin: 50%;
 }
 .face, .face-wrapper {
-  overflow: hidden;
   transform-origin: 0 0;
   backface-visibility: hidden;
   /* hidden by default, prevent blinking and other weird rendering glitchs */

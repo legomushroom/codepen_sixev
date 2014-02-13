@@ -553,6 +553,49 @@ rect() {
   -o-transform: scale(0.55);
   transform: scale(0.55);
 }
+.banner {
+  width: 8.3em;
+  height: 5em;
+  top: -2.5em;
+  left: -2.5709061187389235em;
+  background-color: #f6c855;
+  position: absolute;
+  border-radius: 50%;
+}
+.banner--text {
+  font-size: 3.125em;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5625em;
+  position: relative;
+  z-index: 1;
+  display: none;
+}
+.banner--circle {
+  position: absolute;
+  top: 50%;
+  left: -0.875em;
+  margin-top: -0.875em;
+  width: 1.75em;
+  height: 1.75em;
+  background-color: inherit;
+  border-radius: inherit;
+}
+.banner--circle:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -0.125em;
+  margin-top: -0.125em;
+  width: 0.25em;
+  height: 0.25em;
+  background-color: #fff;
+}
+.banner--circle-right {
+  right: -0.875em;
+  left: auto;
+}
 .carousel-top {
   width: 2.5em;
   height: 5em;
@@ -655,7 +698,6 @@ rect() {
 #tridiv {
   perspective: 50em;
   position: absolute;
-  overflow: hidden;
   width: 100%;
   height: 100%;
   background: transparent;
@@ -699,7 +741,6 @@ rect() {
 }
 .face,
 .face-wrapper {
-  overflow: hidden;
   -webkit-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
   -ms-transform-origin: 0 0;
