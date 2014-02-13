@@ -1,7 +1,6 @@
 hl(size=2px, color=red)
 	outline size solid color
 
-PX = (1/16)em
 
 transform()
 	-webkit-transform arguments
@@ -24,23 +23,22 @@ transform-origin()
 	transform-origin arguments
 
 transform-style()
-  -webkit-transform-style arguments
-  -moz-transform-style arguments
-  -ms-transform-style arguments
-  transform-style arguments
+	-webkit-transform-style arguments
+	-moz-transform-style arguments
+	-ms-transform-style arguments
+	transform-style arguments
 
 animation()
 	-webkit-animation arguments
-  -moz-animation arguments
-  -ms-animation arguments
-  animation arguments
-
+	-moz-animation arguments
+	-ms-animation arguments
+	animation arguments
 
 rect()
 	width  arguments
 	height arguments
 
-
+PX = (1/16)em
 .dome
 	position absolute
 	display inline-block
@@ -76,11 +74,26 @@ for i in 1..36
 		height: 370.5*PX
 
 .carousel
-	// hl 10px green
 	position relative
 	width  500*PX
 	height 500*PX
 	transform scale(.55)
+	svg
+		position absolute
+		backface-visibility hidden
+	
+
+.carousel--3d, .carousel--scene, .carousel--stage
+	transform-style:preserve-3d
+	position:absolute
+	width:100%
+	height:100%
+
+.carousel--stage
+	left:57%
+	top:50%
+	opacity:1
+
 
 width = 8.3em
 height = 5em
@@ -100,21 +113,6 @@ height = 5em
 	position relative
 	z-index 1
 	display none
-
-size = 5em
-.icon-banner
-	width  size
-	height size
-	position absolute
-	top 50%
-	left 0
-	margin-top  -(size/2)
-	margin-left -(size/2)
-	background-color #faf4e5
-	border-radius 50%
-	backface-visibility visible
-
-
 size = 28*PX
 .banner--circle
 	position absolute
@@ -137,14 +135,23 @@ size = 28*PX
 		width  size
 		height size
 		background-color white
-
 .banner--circle-right
 	right -(size/2)
 	left auto
-	
-// .banner--circle-left 
 
 
+size = 5em
+.icon-banner
+	width  size
+	height size
+	position absolute
+	top 50%
+	left 0
+	margin-top  -(size/2)
+	margin-left -(size/2)
+	background-color #faf4e5
+	border-radius 50%
+	backface-visibility visible
 
 width = 2.5em
 .carousel-top
@@ -271,12 +278,12 @@ width = 2.5em
 	width: 100%;
 	height: 100%
 
-.photon-shader
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%
+// .photon-shader
+// 	position: absolute;
+// 	left: 0;
+// 	top: 0;
+// 	width: 100%;
+// 	height: 100%
 
 .side
 	left: 50%
@@ -284,233 +291,50 @@ width = 2.5em
 .cr, .cr .side
 	height: 100%
 
-[class*="cylinder"] .bm
-	transform: rotateX(-90deg) translateY(-50%);
-
-[class*="cylinder"] .bm, [class*="cylinder"] .bm .photon-shader
-	border-radius: 50%
-
-[class*="cylinder"] .bm 
-	top: 65%;
-
 /* .cyl-1 styles */
 .cyl-1
-	transform translate3D(-0.1875em, 2.0625em, 1.1875em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	transform translate3d(-0.1875em, 2.0625em, 1.1875em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 	opacity:1;
 	width:35.8125em;
 	height:4em;
 	margin:-2em 0 0 -17.90625em;
-
 	.side
 		width:3.1581877625221533em
 		height:4em
 	.bm
 		width:35.8125em
 		height:35.8125em
+		border-radius: 50%
+		transform: rotateX(-90deg) translateY(-50%)
+		top: 65%
 
 	start = 5
 	for i in 1..37
 		.s{i}
-			transform rotateY((start+(i*10))deg) translate3D(-50%, 0, 17.88125em)
+			transform rotateY((start+(i*10))deg) translate3d(-50%, 0, 17.88125em)
+
+r = 0
+xz = -11.091666666666663em, -9.958333333333334em, 0, -14em, 10.658333333333337em, -10.250000000000002em, 15.666666666666666em, 0.08333333333333333em, 11.450000000000003em, 10.895833333333334em, -11.070833333333331em, 11.979166666666666em, -16em, 0, 0, 16.583333333333332em
+for i in 2..9
+	/* .cyl-2 styles */
+	.cyl-{i}
+		transform translate3d(xz[r], 10.249999999999998em, xz[r+1]) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+		opacity:1;
+		width:.25em;
+		height:17em;
+		margin:-7.5em 0 0 -0.125em;
+		.side
+			width:0.4580127018922192em
+			height:17em
+			backface-visibility visible
+
+		.face, .side
+			background-color:#faf4e5
+
+		start = 60
+		for j in 0..2
+			.s{j}
+				transform rotateY((start+(j*120))deg) translate3d(-50%, 0, 0.1em)
 	
-/* .cyl-2 styles */
-.cyl-2
-	transform translate3D(-11.091666666666663em, 10.249999999999998em, -9.958333333333334em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	opacity:1;
-	width:.25em;
-	height:17em;
-	margin:-7.5em 0 0 -0.125em;
-	.side
-		width:0.4580127018922192em
-		height:17em
-	.face, .side
-		background-color:#faf4e5
-
-	start = 60
-	for i in 1..2
-		.s{i}
-			transform rotateY((start+(i*120))deg) translate3D(-50%, 0, 0.1em)
-
-/* .cyl-3 styles */
-.cyl-3
-	transform translate3D(0em, 10.24em, -14em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	opacity:1;
-	width:.25em;
-	height:17em;
-	margin:-7.5em 0 0 -0.125em
-	.side
-		width:0.4580127018922192em
-		height:17em
-	.face, .side
-		background-color:#faf4e5
-
-	start = 60
-	for i in 1..2
-		.s{i}
-			transform rotateY((start+(i*120))deg) translate3D(-50%, 0, 0.1em)
-
-/* .cyl-4 styles */
-.cyl-4 {
-  transform:translate3D(10.658333333333337em, 10.249999999999998em, -10.250000000000002em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  opacity:1;
-  width:.25em;
-  height:17em;
-  margin:-7.5em 0 0 -0.125em;
-}
-
-.cyl-4 .side {
-  width:0.4580127018922192em;
-  height:17em;
-}
-.cyl-4 .s0 {
-  transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-4 .s1 {
-  transform: rotateY(180deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-4 .s2 {
-  transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-4 .face, .cyl-4 .side {
-  background-color:#faf4e5;
-}
-/* .cyl-5 styles */
-.cyl-5 {
-  transform:translate3D(15.666666666666666em, 10.24em, 0.08333333333333333em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  opacity:1;
-  width:.25em;
-  height:17em;
-  margin:-7.5em 0 0 -0.125em;
-}
-.cyl-5 .tp, .cyl-5 .bm {
-  width:.25em;
-  height:.25em;
-}
-.cyl-5 .side {
-  width:0.4580127018922192em;
-  height:17em;
-}
-.cyl-5 .s0 {
-  transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-5 .s1 {
-  transform: rotateY(180deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-5 .s2 {
-  transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-5 .face, .cyl-5 .side {
-  background-color:#faf4e5;
-}
-/* .cyl-6 styles */
-.cyl-6 {
-  transform:translate3D(11.450000000000003em, 10.24em, 10.895833333333334em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  opacity:1;
-  width:.25em;
-  height:17em;
-  margin:-7.5em 0 0 -0.125em;
-}
-.cyl-6 .tp, .cyl-6 .bm {
-  width:.25em;
-  height:.25em;
-}
-.cyl-6 .side {
-  width:0.4580127018922192em;
-  height:17em;
-}
-.cyl-6 .s0 {
-  transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-6 .s1 {
-  transform: rotateY(180deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-6 .s2 {
-  transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-6 .face, .cyl-6 .side {
-  background-color:#faf4e5;
-}
-/* .cyl-7 styles */
-.cyl-7 {
-  transform:translate3D(-11.070833333333331em, 10.249999999999998em, 11.979166666666666em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  opacity:1;
-  width:.25em;
-  height:17em;
-  margin:-7.5em 0 0 -0.125em;
-}
-.cyl-7 .tp, .cyl-7 .bm {
-  width:.25em;
-  height:.25em;
-}
-.cyl-7 .side {
-  width:0.4580127018922192em;
-  height:17em;
-}
-.cyl-7 .s0 {
-  transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-7 .s1 {
-  transform: rotateY(180deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-7 .s2 {
-  transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-7 .face, .cyl-7 .side {
-  background-color:#faf4e5;
-}
-/* .cyl-8 styles */
-.cyl-8 {
-  transform:translate3D(-16em, 10.916666666666666em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  opacity:1;
-  width:.25em;
-  height:17em;
-  margin:-7.5em 0 0 -0.125em;
-}
-.cyl-8 .tp, .cyl-8 .bm {
-  width:.25em;
-  height:.25em;
-}
-.cyl-8 .side {
-  width:0.4580127018922192em;
-  height:17em;
-}
-.cyl-8 .s0 {
-  transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-8 .s1 {
-  transform: rotateY(180deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-8 .s2 {
-  transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-8 .face, .cyl-8 .side {
-  background-color:#faf4e5;
-}
-/* .cyl-9 styles */
-.cyl-9 {
-  transform:translate3D(0em, 10.24em, 16.583333333333332em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  opacity:1;
-  width:.25em;
-  height:17em;
-  margin:-7.5em 0 0 -0.125em;
-}
-.cyl-9 .tp, .cyl-9 .bm {
-  width:.25em;
-  height:.25em;
-}
-.cyl-9 .side {
-  width:0.4580127018922192em;
-  height:17em;
-}
-.cyl-9 .s0 {
-  transform: rotateY(60deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-9 .s1 {
-  transform: rotateY(180deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-9 .s2 {
-  transform: rotateY(300deg) translate3D(-50%, 0, 0.1em);
-}
-.cyl-9 .face, .cyl-9 .side {
-  background-color:#faf4e5;
-}
+	r += 2
+	
