@@ -571,6 +571,21 @@ rect() {
   z-index: 1;
   display: none;
 }
+.icon-banner {
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2.5em;
+  margin-left: -2.5em;
+  background-color: #faf4e5;
+  border-radius: 50%;
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
+}
 .banner--circle {
   position: absolute;
   top: 50%;
